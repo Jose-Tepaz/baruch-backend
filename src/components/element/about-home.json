@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_element_about_homes",
+  "info": {
+    "displayName": "About home",
+    "icon": "chartPie"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Sub_title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "img_1": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "img_2": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

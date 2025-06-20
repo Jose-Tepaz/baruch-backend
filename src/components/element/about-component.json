@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_element_about_components",
+  "info": {
+    "displayName": "About component",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "about_title": {
+      "displayName": "About home",
+      "type": "component",
+      "repeatable": false,
+      "component": "element.about-home"
+    }
+  }
+}

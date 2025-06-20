@@ -18,14 +18,22 @@
     "slug": {
       "type": "uid"
     },
-    "articles": {
+    "properties": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::article.article",
+      "target": "api::propertie.propertie",
       "mappedBy": "category"
     },
     "description": {
       "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }
