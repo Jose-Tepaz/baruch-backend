@@ -4,7 +4,7 @@
   "info": {
     "singularName": "propertie",
     "pluralName": "properties",
-    "displayName": "Propertie",
+    "displayName": "Properties",
     "description": ""
   },
   "options": {
@@ -92,6 +92,15 @@
     },
     "is_new": {
       "type": "boolean"
+    },
+    "Map_link": {
+      "type": "string"
+    },
+    "property_status": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::status.status",
+      "inversedBy": "properties"
     }
   }
 }

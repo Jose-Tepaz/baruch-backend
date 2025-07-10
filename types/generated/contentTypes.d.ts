@@ -522,7 +522,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
     description: '';
-    displayName: 'Propertie';
+    displayName: 'Properties';
     pluralName: 'properties';
     singularName: 'propertie';
   };
@@ -561,8 +561,13 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
     lot_area: Schema.Attribute.Decimal & Schema.Attribute.Required;
     main_image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    Map_link: Schema.Attribute.String;
     parking_spaces: Schema.Attribute.Integer;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    property_status: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::status.status'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'> & Schema.Attribute.Required;
     title: Schema.Attribute.String &
@@ -600,6 +605,10 @@ export interface ApiStatusStatus extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::status.status'>;
+    properties: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::propertie.propertie'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Title'>;
     Title: Schema.Attribute.String &
