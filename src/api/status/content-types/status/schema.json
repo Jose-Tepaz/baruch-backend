@@ -27,6 +27,12 @@
     "Slug": {
       "type": "uid",
       "targetField": "Title"
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::propertie.propertie",
+      "mappedBy": "property_status"
     }
   }
 }
