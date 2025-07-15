@@ -43,6 +43,16 @@
           "localized": true
         }
       }
+    },
+    "banner_img": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
     }
   }
 }
