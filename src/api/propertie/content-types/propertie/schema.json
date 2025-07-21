@@ -90,9 +90,6 @@
       "target": "api::category.category",
       "inversedBy": "properties"
     },
-    "is_new": {
-      "type": "boolean"
-    },
     "Map_link": {
       "type": "string"
     },
@@ -101,6 +98,15 @@
       "relation": "manyToOne",
       "target": "api::status.status",
       "inversedBy": "properties"
+    },
+    "is_private": {
+      "type": "boolean",
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

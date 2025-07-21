@@ -1,5 +1,20 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContenctWhyChooseUs extends Struct.ComponentSchema {
+  collectionName: 'components_contenct_why_choose_uses';
+  info: {
+    description: '';
+    displayName: 'Why Choose Us';
+    icon: 'archive';
+  };
+  attributes: {
+    Description: Schema.Attribute.Blocks;
+    img_1: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img_2: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Title: Schema.Attribute.String;
+  };
+}
+
 export interface ElementAboutComponent extends Struct.ComponentSchema {
   collectionName: 'components_element_about_components';
   info: {
@@ -91,6 +106,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contenct.why-choose-us': ContenctWhyChooseUs;
       'element.about-component': ElementAboutComponent;
       'element.about-home': ElementAboutHome;
       'shared.media': SharedMedia;

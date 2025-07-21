@@ -45,14 +45,26 @@
       }
     },
     "banner_img": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
+    },
+    "why_choose_us": {
+      "displayName": "Why Choose Us",
+      "type": "component",
+      "repeatable": false,
+      "component": "contenct.why-choose-us",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
