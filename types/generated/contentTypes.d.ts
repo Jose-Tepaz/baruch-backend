@@ -439,22 +439,18 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
   options: {
     draftAndPublish: true;
   };
-  pluginOptions: {
-    i18n: {
-      localized: true;
-    };
-  };
   attributes: {
     client_name: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     email_address: Schema.Attribute.String;
-    locale: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::contact.contact'
-    >;
+    > &
+      Schema.Attribute.Private;
     message: Schema.Attribute.Text;
     phone: Schema.Attribute.String;
     property_of_interest: Schema.Attribute.String;
