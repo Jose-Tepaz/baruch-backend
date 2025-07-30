@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "property_of_interest": {
+    "interested_in": {
       "type": "string"
     },
     "client_name": {
