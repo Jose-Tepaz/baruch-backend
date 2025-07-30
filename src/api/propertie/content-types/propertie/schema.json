@@ -107,6 +107,12 @@
           "localized": true
         }
       }
+    },
+    "units": {
+      "displayName": "units-available",
+      "type": "component",
+      "repeatable": true,
+      "component": "units-available.units-available"
     }
   }
 }

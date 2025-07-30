@@ -616,6 +616,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    units: Schema.Attribute.Component<'units-available.units-available', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

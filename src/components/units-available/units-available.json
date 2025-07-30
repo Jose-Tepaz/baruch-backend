@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_units_available_units_availables",
+  "info": {
+    "displayName": "units-available",
+    "icon": "grid"
+  },
+  "options": {},
+  "attributes": {
+    "housing_number": {
+      "type": "string"
+    },
+    "bedrooms": {
+      "type": "string"
+    },
+    "built_area": {
+      "type": "string"
+    },
+    "lot_area": {
+      "type": "string"
+    },
+    "parking_spaces": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "floor": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

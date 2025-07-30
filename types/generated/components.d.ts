@@ -103,6 +103,23 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface UnitsAvailableUnitsAvailable extends Struct.ComponentSchema {
+  collectionName: 'components_units_available_units_availables';
+  info: {
+    displayName: 'units-available';
+    icon: 'grid';
+  };
+  attributes: {
+    bedrooms: Schema.Attribute.String;
+    built_area: Schema.Attribute.String;
+    floor: Schema.Attribute.Media<'images' | 'files', true>;
+    housing_number: Schema.Attribute.String;
+    lot_area: Schema.Attribute.String;
+    parking_spaces: Schema.Attribute.String;
+    price: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -114,6 +131,7 @@ declare module '@strapi/strapi' {
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'units-available.units-available': UnitsAvailableUnitsAvailable;
     }
   }
 }
