@@ -2,7 +2,8 @@
   "collectionName": "components_units_available_units_availables",
   "info": {
     "displayName": "units-available",
-    "icon": "grid"
+    "icon": "grid",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -18,8 +19,17 @@
     "lot_area": {
       "type": "string"
     },
-    "parking_spaces": {
-      "type": "string"
+    "storage_room": {
+      "type": "boolean",
+      "default": false
+    },
+    "garage": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_available": {
+      "type": "boolean",
+      "default": false
     },
     "price": {
       "type": "string"
@@ -30,7 +40,7 @@
         "files"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     }
   }
 }
