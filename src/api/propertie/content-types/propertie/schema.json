@@ -113,6 +113,13 @@
       "type": "component",
       "repeatable": true,
       "component": "units-available.units-available"
+    },
+    "location": {
+      "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

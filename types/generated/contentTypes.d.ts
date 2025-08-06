@@ -585,6 +585,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
       }>;
     gallery: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
+    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     is_private: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -597,6 +598,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::propertie.propertie'
     >;
+    location: Schema.Attribute.String;
     lot_area: Schema.Attribute.Decimal & Schema.Attribute.Required;
     main_image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
