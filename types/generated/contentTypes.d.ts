@@ -602,7 +602,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
     lot_area: Schema.Attribute.Decimal & Schema.Attribute.Required;
     main_image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    Map_link: Schema.Attribute.String;
+    Map_link: Schema.Attribute.Text;
     parking_spaces: Schema.Attribute.Integer;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     property_status: Schema.Attribute.Relation<

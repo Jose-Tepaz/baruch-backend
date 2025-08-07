@@ -91,7 +91,7 @@
       "inversedBy": "properties"
     },
     "Map_link": {
-      "type": "string"
+      "type": "text"
     },
     "property_status": {
       "type": "relation",
