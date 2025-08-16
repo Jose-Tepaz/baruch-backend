@@ -551,6 +551,112 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMagazineCategoryMagazineCategory
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'magazine_categories';
+  info: {
+    description: '';
+    displayName: 'Magazine categories';
+    pluralName: 'magazine-categories';
+    singularName: 'magazine-category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::magazine-category.magazine-category'
+    >;
+    magazines: Schema.Attribute.Relation<'oneToMany', 'api::magazine.magazine'>;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMagazineMagazine extends Struct.CollectionTypeSchema {
+  collectionName: 'magazines';
+  info: {
+    description: '';
+    displayName: 'Magazine';
+    pluralName: 'magazines';
+    singularName: 'magazine';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    body_magazine: Schema.Attribute.DynamicZone<
+      [
+        'paragraph-center.paragraph-center',
+        'title-center.title-center',
+        'img.img',
+        'title-left.title-left',
+        'paragraph-left.paragraph-left',
+      ]
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    cover: Schema.Attribute.Media<'images' | 'files', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    excerpt: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::magazine.magazine'
+    >;
+    magazine_category: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::magazine-category.magazine-category'
+    >;
+    publication_date: Schema.Attribute.Date;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
@@ -1228,6 +1334,8 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::magazine-category.magazine-category': ApiMagazineCategoryMagazineCategory;
+      'api::magazine.magazine': ApiMagazineMagazine;
       'api::propertie.propertie': ApiPropertiePropertie;
       'api::status.status': ApiStatusStatus;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

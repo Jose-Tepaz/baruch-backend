@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_paragraph_center_paragraph_centers",
+  "info": {
+    "displayName": "paragraph_center"
+  },
+  "options": {},
+  "attributes": {
+    "paragraph_center": {
+      "type": "blocks"
+    }
+  }
+}

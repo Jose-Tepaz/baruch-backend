@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_paragraph_left_paragraph_lefts",
+  "info": {
+    "displayName": "paragraph_left"
+  },
+  "options": {},
+  "attributes": {
+    "paragraph_left": {
+      "type": "blocks"
+    }
+  }
+}

@@ -41,6 +41,57 @@ export interface ElementAboutHome extends Struct.ComponentSchema {
   };
 }
 
+export interface ImgTextImgBlockLeft extends Struct.ComponentSchema {
+  collectionName: 'components_img_text_img_block_lefts';
+  info: {
+    description: '';
+    displayName: 'img-block-left';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface ImgTextImgText extends Struct.ComponentSchema {
+  collectionName: 'components_img_text_img_texts';
+  info: {
+    displayName: 'img_text';
+  };
+  attributes: {};
+}
+
+export interface ImgImg extends Struct.ComponentSchema {
+  collectionName: 'components_img_imgs';
+  info: {
+    displayName: 'img';
+  };
+  attributes: {
+    img: Schema.Attribute.Media<'images' | 'files'>;
+  };
+}
+
+export interface ParagraphCenterParagraphCenter extends Struct.ComponentSchema {
+  collectionName: 'components_paragraph_center_paragraph_centers';
+  info: {
+    displayName: 'paragraph_center';
+  };
+  attributes: {
+    paragraph_center: Schema.Attribute.Blocks;
+  };
+}
+
+export interface ParagraphLeftParagraphLeft extends Struct.ComponentSchema {
+  collectionName: 'components_paragraph_left_paragraph_lefts';
+  info: {
+    displayName: 'paragraph_left';
+  };
+  attributes: {
+    paragraph_left: Schema.Attribute.Blocks;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -103,6 +154,36 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface TitleCenterTitleCenter extends Struct.ComponentSchema {
+  collectionName: 'components_title_center_title_centers';
+  info: {
+    displayName: 'title_center';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface TitleLeftTitleLeft extends Struct.ComponentSchema {
+  collectionName: 'components_title_left_title_lefts';
+  info: {
+    displayName: 'title_left';
+  };
+  attributes: {
+    title_left: Schema.Attribute.String;
+  };
+}
+
+export interface TitleTextTitleText extends Struct.ComponentSchema {
+  collectionName: 'components_title_text_title_texts';
+  info: {
+    displayName: 'title_text';
+  };
+  attributes: {
+    title: Schema.Attribute.Text;
+  };
+}
+
 export interface UnitsAvailableUnitsAvailable extends Struct.ComponentSchema {
   collectionName: 'components_units_available_units_availables';
   info: {
@@ -129,11 +210,19 @@ declare module '@strapi/strapi' {
       'contenct.why-choose-us': ContenctWhyChooseUs;
       'element.about-component': ElementAboutComponent;
       'element.about-home': ElementAboutHome;
+      'img-text.img-block-left': ImgTextImgBlockLeft;
+      'img-text.img-text': ImgTextImgText;
+      'img.img': ImgImg;
+      'paragraph-center.paragraph-center': ParagraphCenterParagraphCenter;
+      'paragraph-left.paragraph-left': ParagraphLeftParagraphLeft;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'title-center.title-center': TitleCenterTitleCenter;
+      'title-left.title-left': TitleLeftTitleLeft;
+      'title-text.title-text': TitleTextTitleText;
       'units-available.units-available': UnitsAvailableUnitsAvailable;
     }
   }

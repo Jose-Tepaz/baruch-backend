@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_title_left_title_lefts",
+  "info": {
+    "displayName": "title_left"
+  },
+  "options": {},
+  "attributes": {
+    "title_left": {
+      "type": "string"
+    }
+  }
+}
