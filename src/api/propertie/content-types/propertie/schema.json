@@ -120,6 +120,12 @@
     "is_featured": {
       "type": "boolean",
       "default": false
+    },
+    "amenities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::amenitie.amenitie",
+      "inversedBy": "properties"
     }
   }
 }

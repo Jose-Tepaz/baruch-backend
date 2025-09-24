@@ -373,6 +373,49 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAmenitieAmenitie extends Struct.CollectionTypeSchema {
+  collectionName: 'amenities';
+  info: {
+    description: '';
+    displayName: 'Amenities';
+    pluralName: 'amenities';
+    singularName: 'amenitie';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::amenitie.amenitie'
+    >;
+    Name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    properties: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::propertie.propertie'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'Name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -675,6 +718,10 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
   };
   attributes: {
     address: Schema.Attribute.String & Schema.Attribute.Required;
+    amenities: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::amenitie.amenitie'
+    >;
     bathrooms: Schema.Attribute.Integer & Schema.Attribute.Required;
     bedrooms: Schema.Attribute.Integer & Schema.Attribute.Required;
     built_area: Schema.Attribute.Decimal & Schema.Attribute.Required;
@@ -1330,6 +1377,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::amenitie.amenitie': ApiAmenitieAmenitie;
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::global.global': ApiGlobalGlobal;
