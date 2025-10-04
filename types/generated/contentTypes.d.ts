@@ -483,6 +483,7 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    city: Schema.Attribute.String;
     client_name: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -497,6 +498,7 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     message: Schema.Attribute.Text;
     phone: Schema.Attribute.String;
+    preferred_contact_moment: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -736,6 +738,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    estimated_completion: Schema.Attribute.Date;
     gallery: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
     is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;

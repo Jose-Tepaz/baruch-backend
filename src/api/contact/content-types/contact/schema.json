@@ -26,6 +26,12 @@
     },
     "phone": {
       "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "preferred_contact_moment": {
+      "type": "string"
     }
   }
 }

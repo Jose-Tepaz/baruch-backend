@@ -126,6 +126,9 @@
       "relation": "manyToMany",
       "target": "api::amenitie.amenitie",
       "inversedBy": "properties"
+    },
+    "estimated_completion": {
+      "type": "date"
     }
   }
 }
