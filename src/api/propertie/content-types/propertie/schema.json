@@ -36,30 +36,65 @@
     },
     "price": {
       "type": "decimal",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "address": {
       "type": "string",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "bedrooms": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "bathrooms": {
       "type": "integer",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "parking_spaces": {
-      "type": "integer"
+      "type": "integer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "lot_area": {
       "type": "decimal",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "built_area": {
       "type": "decimal",
-      "required": true
+      "required": true,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "gallery": {
       "type": "media",
@@ -68,7 +103,12 @@
       "allowedTypes": [
         "images",
         "files"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "main_image": {
       "type": "media",
@@ -77,7 +117,12 @@
       "allowedTypes": [
         "images",
         "files"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "slug": {
       "type": "uid",
@@ -91,7 +136,12 @@
       "inversedBy": "properties"
     },
     "Map_link": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "property_status": {
       "type": "relation",
@@ -104,7 +154,7 @@
       "default": false,
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       }
     },
@@ -112,14 +162,21 @@
       "displayName": "units-available",
       "type": "component",
       "repeatable": true,
-      "component": "units-available.units-available"
-    },
-    "location": {
-      "type": "string"
+      "component": "units-available.units-available",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "is_featured": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
     },
     "amenities": {
       "type": "relation",
@@ -128,7 +185,18 @@
       "inversedBy": "properties"
     },
     "estimated_completion": {
-      "type": "date"
+      "type": "date",
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      }
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "properties"
     }
   }
 }

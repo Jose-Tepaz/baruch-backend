@@ -596,6 +596,40 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
+  collectionName: 'locations';
+  info: {
+    description: '';
+    displayName: 'Location';
+    pluralName: 'locations';
+    singularName: 'location';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::location.location'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    properties: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::propertie.propertie'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiMagazineCategoryMagazineCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'magazine_categories';
@@ -719,14 +753,38 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
     };
   };
   attributes: {
-    address: Schema.Attribute.String & Schema.Attribute.Required;
+    address: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     amenities: Schema.Attribute.Relation<
       'manyToMany',
       'api::amenitie.amenitie'
     >;
-    bathrooms: Schema.Attribute.Integer & Schema.Attribute.Required;
-    bedrooms: Schema.Attribute.Integer & Schema.Attribute.Required;
-    built_area: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    bathrooms: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    bedrooms: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    built_area: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -738,14 +796,30 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    estimated_completion: Schema.Attribute.Date;
+    estimated_completion: Schema.Attribute.Date &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     gallery: Schema.Attribute.Media<'images' | 'files', true> &
-      Schema.Attribute.Required;
-    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    is_featured: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     is_private: Schema.Attribute.Boolean &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Schema.Attribute.DefaultTo<false>;
@@ -754,13 +828,40 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::propertie.propertie'
     >;
-    location: Schema.Attribute.String;
-    lot_area: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    location: Schema.Attribute.Relation<'manyToOne', 'api::location.location'>;
+    lot_area: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     main_image: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
-    Map_link: Schema.Attribute.Text;
-    parking_spaces: Schema.Attribute.Integer;
-    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    Map_link: Schema.Attribute.Text &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    parking_spaces: Schema.Attribute.Integer &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    price: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     property_status: Schema.Attribute.Relation<
       'manyToOne',
       'api::status.status'
@@ -774,7 +875,12 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    units: Schema.Attribute.Component<'units-available.units-available', true>;
+    units: Schema.Attribute.Component<'units-available.units-available', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1385,6 +1491,7 @@ declare module '@strapi/strapi' {
       'api::contact.contact': ApiContactContact;
       'api::global.global': ApiGlobalGlobal;
       'api::home.home': ApiHomeHome;
+      'api::location.location': ApiLocationLocation;
       'api::magazine-category.magazine-category': ApiMagazineCategoryMagazineCategory;
       'api::magazine.magazine': ApiMagazineMagazine;
       'api::propertie.propertie': ApiPropertiePropertie;

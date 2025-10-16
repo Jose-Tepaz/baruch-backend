@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "locations",
+  "info": {
+    "singularName": "location",
+    "pluralName": "locations",
+    "displayName": "Location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "pluginOptions": {}
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "properties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::propertie.propertie",
+      "mappedBy": "location"
+    }
+  }
+}
