@@ -192,6 +192,7 @@ export interface UnitsAvailableUnitsAvailable extends Struct.ComponentSchema {
     icon: 'grid';
   };
   attributes: {
+    bathrooms: Schema.Attribute.Integer;
     bedrooms: Schema.Attribute.String;
     built_area: Schema.Attribute.String;
     floor: Schema.Attribute.Media<'images' | 'files'>;
