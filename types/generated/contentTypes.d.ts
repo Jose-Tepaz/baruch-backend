@@ -377,7 +377,7 @@ export interface ApiAmenitieAmenitie extends Struct.CollectionTypeSchema {
   collectionName: 'amenities';
   info: {
     description: '';
-    displayName: 'Amenities';
+    displayName: 'Features';
     pluralName: 'amenities';
     singularName: 'amenitie';
   };
@@ -930,6 +930,7 @@ export interface ApiStatusStatus extends Struct.CollectionTypeSchema {
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
+    description: '';
     displayName: 'Testimonials';
     pluralName: 'testimonials';
     singularName: 'testimonial';
@@ -954,13 +955,13 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     name_of_client: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     position_of_client: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
