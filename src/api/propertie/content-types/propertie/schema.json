@@ -198,7 +198,7 @@
       "target": "api::location.location",
       "inversedBy": "properties"
     },
-    "Highlight": {
+    "highlight": {
       "type": "string",
       "pluginOptions": {
         "i18n": {

@@ -195,11 +195,11 @@ export interface UnitsAvailableUnitsAvailable extends Struct.ComponentSchema {
     bathrooms: Schema.Attribute.Integer;
     bedrooms: Schema.Attribute.String;
     built_area: Schema.Attribute.String;
+    exterior_area: Schema.Attribute.String;
     floor: Schema.Attribute.Media<'images' | 'files'>;
     garage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     housing_number: Schema.Attribute.String;
     is_available: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    lot_area: Schema.Attribute.String;
     price: Schema.Attribute.String;
     storage_room: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };

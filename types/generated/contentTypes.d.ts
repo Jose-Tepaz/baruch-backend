@@ -809,7 +809,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
           localized: false;
         };
       }>;
-    Highlight: Schema.Attribute.String &
+    highlight: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

@@ -16,7 +16,7 @@
     "built_area": {
       "type": "string"
     },
-    "lot_area": {
+    "exterior_area": {
       "type": "string"
     },
     "storage_room": {
