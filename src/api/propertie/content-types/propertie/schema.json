@@ -184,14 +184,6 @@
       "target": "api::amenitie.amenitie",
       "inversedBy": "properties"
     },
-    "estimated_completion": {
-      "type": "date",
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      }
-    },
     "location": {
       "type": "relation",
       "relation": "manyToOne",
@@ -205,6 +197,9 @@
           "localized": true
         }
       }
+    },
+    "estimated_completion": {
+      "type": "string"
     }
   }
 }

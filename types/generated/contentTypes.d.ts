@@ -796,12 +796,7 @@ export interface ApiPropertiePropertie extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    estimated_completion: Schema.Attribute.Date &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
+    estimated_completion: Schema.Attribute.String;
     gallery: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{

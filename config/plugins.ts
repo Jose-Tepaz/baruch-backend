@@ -13,5 +13,13 @@ module.exports = ({ env }) => ({
         },
       },
     },
-    
+"strapi-csv-import-export": {
+          config: {
+        authorizedExports: ["api::propertie.propertie", "api::category.category"],
+        authorizedImports: ["api::propertie.propertie", "api::category.category"],
+      },
+    },
   });
+
+  
+
